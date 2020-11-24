@@ -5,7 +5,8 @@ const requireDir = require('require-dir');
 const routes = require('./routes');
 require('dotenv-safe').config();
 
-mongoose.connect('mongodb://localhost:27017/indie4all', { 
+const mongoUri = 'mongodb+srv://ndev:021165@indie4all.tzdol.mongodb.net/indie4all?retryWrites=true&w=majority'
+mongoose.connect(mongoUri, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useCreateIndex: true,

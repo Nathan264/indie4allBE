@@ -4,11 +4,10 @@ const fs = require('fs');
 
 module.exports = {
     async loadGame(req, res) {
-        const { name } = req.query;
+        const name = req.query.name.replace(/%20/g, ' ');
         const game = await Game.findOne({
             name,
         }, '-createdAt -updatedAt').populate('dev', 'username userImage -_id').populate('comments.user', 'username userImage -_id');
-        
         if(!game.analysed) {
             const {username} = req.query;
             if(username === undefined) {
