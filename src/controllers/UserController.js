@@ -46,7 +46,7 @@ module.exports = {
 
     async getUserInfo(req, res) {
         const {username} = req.query;
-        const user = await User.findOne({username}, 'email username birthDate moderator');
+        const user = await User.findOne({username}, 'email userImage username birthDate moderator');
         return res.send(user);
     }
     
