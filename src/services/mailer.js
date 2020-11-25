@@ -18,7 +18,7 @@ module.exports = {
             from: '"Fred Foo 👻" <foo@example.com>', 
             to: email,
             subject: "Token indie4all", 
-            html: `<a href=http://localhost:3333/verifyAccount/?username=${username}&email=${email}&token=${token}>Liberar conta</a>`,
+            html: `<a href=https://indie4allbe.herokuapp.com/verifyAccount/?username=${username}&email=${email}&token=${token}>Liberar conta</a>`,
         });
         return nodemailer.getTestMessageUrl(info);
     },
@@ -40,7 +40,7 @@ module.exports = {
             from: '"Fred Foo 👻" <foo@example.com>', 
             to: email,
             subject: "Token indie4all", 
-            html: `<a href=http://localhost:3000/pwdRecovery/?username=${username}&email=${email}&token=${token}>Mudar Senha</a>`,
+            html: `<a href=https://indie4allbe.herokuapp.com/pwdRecovery/?username=${username}&email=${email}&token=${token}>Mudar Senha</a>`,
         });
         return nodemailer.getTestMessageUrl(mail);
     }
